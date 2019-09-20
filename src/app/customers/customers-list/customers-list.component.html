@@ -1,0 +1,38 @@
+<h1>Customers</h1>
+<div class="form-inline mt-2 mt-md-0">
+  <input (ngModelChange)="onChanged()" class="form-control mr-sm-2" [(ngModel)]="searchText" placeholder="search">
+  <button (click)="clear()" class="btn btn-outline-success my-2 my-sm-0">Clear</button>
+  <div class="divider"></div>
+  <button (click)="save(searchText)" class="btn btn-outline-success my-2 my-sm-0">Add</button>
+</div>
+<div class="middle-body">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let customer of customers$ | customerFilter : searchText | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize ">
+        <td>{{customer.name | titlecase}}</td>
+        <td>({{customer.phone|slice:0:3}}) {{customer.phone|slice:3:6}} {{customer.phone|slice:6:10}}</td>
+        <td><a href="javascript:;" (click)="editCustomer(customer.phone,customer.name,customer.key)">Edit</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" [maxSize]="3" [rotate]="true">
+    </ngb-pagination>
+
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+      <option [ngValue]="4">4 items per page</option>
+      <option [ngValue]="6">6 items per page</option>
+      <option [ngValue]="10">10 items per page</option>
+    </select>
+  </div>
+
+</div>

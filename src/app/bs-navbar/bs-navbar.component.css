@@ -1,0 +1,8 @@
+
+.dropdown-toggle{
+    cursor: pointer;
+}
+
+.bg-company-red {
+    background-color: rgb(236, 188, 188) !important;
+}

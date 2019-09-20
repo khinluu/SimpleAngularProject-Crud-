@@ -1,0 +1,28 @@
+
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+body{
+    padding-top: 80px;
+}
+
+@media screen and (min-width: 767px){
+
+body {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+}
+
+.btn { 
+    width: 150px; 
+}
+
+.nav-link {
+    padding: 0px;
+}
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
