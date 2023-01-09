@@ -31,7 +31,7 @@
     "zone.js": "~0.9.1",
     "angular-draggable-droppable": "4.3.2",
     "angular-resizable-element": "3.2.4",
-    "rrule": "2.6.2",
+    "rrule": "2.7.1",
     "calendar-utils": "0.3.3",
     "flatpickr": "4.6.2",
     "angularx-flatpickr": "6.1.0"
